@@ -23,9 +23,9 @@ namespace :tarantula do
     end    
     
     Dir.glob("tmp/tarantula/**/index.html") do |file|
-      if PLATFORM['darwin']
+      if RUBY_PLATFORM['darwin']
         system("open #{file}")
-      elsif PLATFORM[/linux/]
+      elsif RUBY_PLATFORM[/linux/]
         system("firefox #{file}")
       else
         puts "You can view tarantula results at #{file}"
